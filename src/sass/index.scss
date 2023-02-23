@@ -42,9 +42,9 @@ a {
   padding: 10px;
   width: 100vw;
   background-color: #315da7;
-  -webkit-box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
-  -moz-box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
-  box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
+  -webkit-box-shadow: 0px 2px 5px -1px rgba(49, 93, 167, 1);
+  -moz-box-shadow: 0px 2px 5px -1px rgba(49, 93, 167, 1);
+  box-shadow: 0px 2px 5px -2px rgba(49, 93, 167, 1);
 }
 
 .search-form input {
@@ -70,6 +70,7 @@ a {
   &:hover,
   &:focus {
     background-color: lightgray;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -87,6 +88,7 @@ a {
   &:hover,
   &:focus {
     background-color: #313da7;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -117,6 +119,7 @@ a {
     -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
 
@@ -158,4 +161,49 @@ a {
   &:focus {
     background-color: lightgray;
   }
+}
+
+#loading-forever {
+  display: block;
+  margin: 0 auto;
+}
+
+#loading-forever.hidden {
+  display: none;
+}
+
+.start-menu {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px;
+}
+
+.select {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  width: 250px;
+  height: 100px;
+  border: 1px solid #000;
+  border-radius: 5px;
+  font-weight: 700;
+  color: black;
+  background-color: rgb(239, 239, 239);
+  -webkit-box-shadow: 8px 9px 12px -12px rgba(46, 74, 117, 1);
+  -moz-box-shadow: 8px 9px 12px -12px rgba(46, 74, 117, 1);
+  box-shadow: 8px 9px 12px -12px rgba(46, 74, 117, 1);
+
+  &:hover,
+  &:focus {
+    background-color: lightgray;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+.logo-img {
+  display: block;
+  margin: 0 auto;
 }

@@ -26,9 +26,10 @@ function onSubmit(e) {
 
   fetchPhotos().finally(() => {
     form.reset();
-    Notiflix.Notify.success(
-      `Hooray! We found ${galleryApiService.totalHits} images`
-    );
+    if (photoGallery.children.length !== 0)
+      Notiflix.Notify.success(
+        `Hooray! We found ${galleryApiService.totalHits} images`
+      );
   });
 }
 

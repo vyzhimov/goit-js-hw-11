@@ -20,16 +20,23 @@
       </button>
     </form>
     <div class="container">
-      <div class="gallery">
+      <div class="gallery" id="infinite-scroll">
         <!-- Картки зображень -->
       </div>
     </div>
-    <button type="button" id="loadMore">Load more</button>
+    <img
+      src="./images/loading-loading-forever.gif"
+      id="loading-forever"
+      class="hidden"
+      alt="loading"
+      width="30px"
+      height="30px"
+    />
 
     <a class="back-btn" href="index.html"
       ><img src="./icons/arrow-left2.svg" alt="back" width="25px" height="25px"
     /></a>
 
-    <script src="./js/indexloadmore.js" type="module"></script>
+    <script src="./js/infinity-scroll.js" type="module"></script>
   </body>
 </html>
