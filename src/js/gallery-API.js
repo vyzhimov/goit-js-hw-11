@@ -13,7 +13,7 @@ export default class GalleryApiService {
   }
 
   async getGallery() {
-    const URL = `${END_POINT}?key=${API_KEY}&q=${this.searchQuery}&page=${this.page}&${DEFAULT_PARAMS}`;
+    const URL = `${END_POINT}?key=${API_KEY}&q=${this.searchQuery}&per_page=40&page=${this.page}&${DEFAULT_PARAMS}`;
 
     try {
       const response = await axios.get(URL);
