@@ -60,7 +60,7 @@ function fetchPhotos() {
           .querySelector('.gallery')
           .firstElementChild.getBoundingClientRect();
         window.scrollBy({
-          top: cardHeight * 2,
+          top: cardHeight * 2 - 20,
           behavior: 'smooth',
         });
       }
