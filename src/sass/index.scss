@@ -28,16 +28,14 @@ a {
   overflow: hidden;
 }
 
-
 .container {
   // width: 100%;
   padding: 0 16px;
   margin: 0 auto;
-
-  
 }
 
 .search-form {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -45,13 +43,12 @@ a {
   width: 100vw;
   background-color: #315da7;
   -webkit-box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
-    -moz-box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
-    box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
-  
+  -moz-box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
+  box-shadow: 0px 2px 7px 0px rgba(49, 93, 167, 1);
 }
 
 .search-form input {
-  font-size: 14px;  
+  font-size: 14px;
   border-top-left-radius: 5px;
   border-bottom-left-radius: 5px;
   border-top-left-radius: 5px;
@@ -64,13 +61,14 @@ a {
 
 .search-form > button {
   height: 42px;
-  width: 36px;
-  border: 3px solid lightblue ;
+  width: 42px;
+  border: 3px solid lightblue;
   border-left: none;
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: lightgray;
   }
 }
@@ -85,6 +83,19 @@ a {
   color: #fff;
   border-radius: 5px;
   border: none;
+
+  &:hover,
+  &:focus {
+    background-color: #313da7;
+  }
+}
+
+#loadMore.hidden {
+  display: none;
+}
+
+#loadMore[disabled] {
+  background-color: gray;
 }
 
 .gallery {
@@ -96,9 +107,17 @@ a {
 
 .photo-card {
   width: calc((100% - 60px) / 4);
-  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%), 0px 2px 1px rgb(0 0 0 / 20%);
+  box-shadow: 0px 1px 3px rgb(0 0 0 / 12%), 0px 1px 1px rgb(0 0 0 / 14%),
+    0px 2px 1px rgb(0 0 0 / 20%);
   border-radius: 4px 4px 4px 4px;
   overflow: hidden;
+
+  &:hover,
+  &:focus {
+    -webkit-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+    -moz-box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.75);
+  }
 }
 
 .photo-card img {
@@ -122,11 +141,21 @@ a {
   background-color: #f5f4fa;
 }
 
-#loadMore.hidden {
-  display: none;
-}
+.back-btn {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 36px;
+  width: 36px;
+  border: 3px solid lightblue;
+  border-radius: 5px;
+  background-color: rgb(239, 239, 239);
 
-#loadMore[disabled] {
-  background-color: gray;
+  &:hover,
+  &:focus {
+    background-color: lightgray;
+  }
 }
-

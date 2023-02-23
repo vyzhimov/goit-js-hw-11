@@ -2,6 +2,7 @@ import Notiflix from 'notiflix';
 import GalleryApiService from './gallery-API';
 import LoadMoreBtn from './components/load-more-btn';
 import SimpleLightbox from 'simplelightbox';
+import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const input = document.getElementById('search-form');
 const photoGallery = document.querySelector('.gallery');
@@ -29,8 +30,6 @@ function onSubmit(e) {
       `Hooray! We found ${galleryApiService.totalHits} images`
     );
   });
-
-  gallery.refresh();
 }
 
 function fetchPhotos() {
@@ -47,7 +46,6 @@ function fetchPhotos() {
 
       const total = gallery.totalHits;
       galleryApiService.setTotalHits(total);
-
       return gallery.hits.reduce(
         (markup, photo) => createMarkup(photo) + markup,
         ''
@@ -55,6 +53,17 @@ function fetchPhotos() {
     })
     .then(markup => {
       appendPhotoToGallery(markup);
+
+      if (galleryApiService.page !== 2) {
+        const { height: cardHeight } = document
+          .querySelector('.gallery')
+          .firstElementChild.getBoundingClientRect();
+        window.scrollBy({
+          top: cardHeight * 2,
+          behavior: 'smooth',
+        });
+      }
+
       loadMoreBtn.enable();
       galleryApiService.elemCount = photoGallery.children.length;
       if (galleryApiService.elemCount === galleryApiService.totalHits) {
@@ -63,6 +72,7 @@ function fetchPhotos() {
         );
         loadMoreBtn.hide();
       }
+      gallery.refresh();
     });
 }
 
