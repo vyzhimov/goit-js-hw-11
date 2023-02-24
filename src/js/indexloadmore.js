@@ -11,7 +11,6 @@ const galleryApiService = new GalleryApiService();
 
 input.addEventListener('submit', onSubmit);
 loadMoreBtn.button.addEventListener('click', fetchPhotos);
-galleryApiService.getGallery();
 
 function onSubmit(e) {
   e.preventDefault();

@@ -9,7 +9,6 @@ const loadingImg = document.querySelector('#loading-forever');
 const galleryApiService = new GalleryApiService();
 
 input.addEventListener('submit', onSubmit);
-galleryApiService.getGallery();
 
 function onSubmit(e) {
   e.preventDefault();

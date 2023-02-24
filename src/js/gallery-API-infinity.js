@@ -1,8 +1,7 @@
 import axios from 'axios';
 import Notiflix from 'notiflix';
-import LoadMoreBtn from './components/load-more-btn';
+
 const loadingImg = document.querySelector('#loading-forever');
-const loadMoreBtn = new LoadMoreBtn({ selector: '#loadMore', isHidden: true });
 const API_KEY = '33863715-df25260fa40bd11fad8b98be3';
 const END_POINT = 'https://pixabay.com/api/';
 const DEFAULT_PARAMS =
@@ -29,7 +28,6 @@ export default class GalleryApiService {
       Notiflix.Notify.warning(
         "We're sorry, but you've reached the end of search results."
       );
-      loadMoreBtn.hide();
       loadingImg.classList.add('hidden');
     }
   }
