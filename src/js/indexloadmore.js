@@ -37,7 +37,7 @@ function fetchPhotos() {
   return galleryApiService
     .getGallery()
     .then(gallery => {
-      if (gallery.length === 0) {
+      if (gallery.hits.length === 0 && galleryApiService.elemCount === 0) {
         loadMoreBtn.hide();
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
@@ -66,7 +66,10 @@ function fetchPhotos() {
 
       loadMoreBtn.enable();
       galleryApiService.elemCount = photoGallery.children.length;
-      if (galleryApiService.elemCount === galleryApiService.totalHits) {
+      if (
+        galleryApiService.elemCount === galleryApiService.totalHits &&
+        galleryApiService.elemCount > 1
+      ) {
         Notiflix.Notify.warning(
           "We're sorry, but you've reached the end of search results."
         );

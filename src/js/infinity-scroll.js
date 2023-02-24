@@ -34,7 +34,7 @@ function fetchPhotos() {
   return galleryApiService
     .getGallery()
     .then(gallery => {
-      if (gallery.length === 0) {
+      if (gallery.hits.length === 0 && galleryApiService.elemCount === 0) {
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
