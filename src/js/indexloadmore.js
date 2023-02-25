@@ -37,11 +37,11 @@ function fetchPhotos() {
   return galleryApiService
     .getGallery()
     .then(gallery => {
-      if (gallery.hits.length === 0 && galleryApiService.elemCount === 0) {
-        loadMoreBtn.hide();
+      if (gallery.hits.length === 0) {
         Notiflix.Notify.failure(
           'Sorry, there are no images matching your search query. Please try again.'
         );
+        loadMoreBtn.hide();
       }
 
       const total = gallery.totalHits;
