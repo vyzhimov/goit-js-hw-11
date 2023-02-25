@@ -67,7 +67,7 @@ function fetchPhotos() {
       loadMoreBtn.enable();
       galleryApiService.elemCount = photoGallery.children.length;
       if (
-        galleryApiService.elemCount === galleryApiService.totalHits &&
+        galleryApiService.elemCount >= galleryApiService.totalHits &&
         galleryApiService.elemCount > 1
       ) {
         Notiflix.Notify.warning(

@@ -9,7 +9,7 @@ export default class LoadMoreBtn {
   }
 
   hide() {
-    this.button.classList.add('hidden');
+    if (this.button !== null) this.button.classList.add('hidden');
   }
 
   show() {

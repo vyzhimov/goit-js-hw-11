@@ -25,10 +25,6 @@ export default class GalleryApiService {
       return { hits, totalHits };
     } catch (error) {
       console.error(error);
-      Notiflix.Notify.warning(
-        "We're sorry, but you've reached the end of search results."
-      );
-      loadMoreBtn.hide();
     }
   }
 
